@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="110.235" height="27.01" viewBox="0 0 110.235 27.01">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.457" y1="0.921" x2="0.619" y2="0.05" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#5700fb"/>
+      <stop offset="1" stop-color="#2a00fb"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.609" y1="-0.16" x2="0.421" y2="0.67" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#b5fe01"/>
+      <stop offset="1" stop-color="#50e85d"/>
+    </linearGradient>
+  </defs>
+  <g id="logo_medsight_2" transform="translate(1902.55 -7727)">
+    <g id="ISO-MedSight" transform="translate(-1902.55 7727)">
+      <path id="Trazado_709" data-name="Trazado 709" d="M260.042,243.2H247.828a7.4,7.4,0,0,1-7.4-7.4V223.588a7.4,7.4,0,0,1,7.4-7.4h12.214a7.4,7.4,0,0,1,7.4,7.4V235.8A7.4,7.4,0,0,1,260.042,243.2Z" transform="translate(-240.43 -216.19)" fill="#00065a"/>
+      <path id="Trazado_710" data-name="Trazado 710" d="M295.742,288.737H304.3c0-.04,0-.08,0-.121a9.3,9.3,0,0,1,9.285-9.285V270.77a17.867,17.867,0,0,0-17.846,17.846C295.74,288.657,295.742,288.7,295.742,288.737Z" transform="translate(-286.576 -261.727)" fill="url(#linear-gradient)"/>
+      <path id="Trazado_711" data-name="Trazado 711" d="M258.274,216.2h-8.563c0,.04,0,.08,0,.121a9.3,9.3,0,0,1-9.285,9.285v8.561a17.867,17.867,0,0,0,17.846-17.846C258.276,216.28,258.274,216.24,258.274,216.2Z" transform="translate(-240.43 -216.198)" fill="url(#linear-gradient-2)"/>
+    </g>
+    <text id="MedSight" transform="translate(-1827.315 7746.005)" fill="#fff" font-size="16" font-family="Helvetica-Bold, Helvetica" font-weight="700"><tspan x="-34" y="0">Med</tspan><tspan y="0" font-family="Helvetica" font-weight="400">Sight</tspan></text>
+  </g>
+</svg>
