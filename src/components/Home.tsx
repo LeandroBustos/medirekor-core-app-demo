@@ -6,8 +6,19 @@ import logoMedirekor from '../assets/images/logo_medirekor_2.svg'
 import '../assets/styles/Home.css';
 import imgUser from '../assets/images/img_user_dr-rodriguez.png'
 import { TotalBox } from './TotalBox';
+import { Cell, Pie, PieChart, Label } from 'recharts';
+import CustomLabel from './CustomLabel';
+import CustomPieChart from './CustomPieChart';
+import CustomBarChart from './CustomBarChart';
 
 const Home = (props: any) => {
+    const data = [
+        { name: 'Group A', value: 1000 },
+        { name: 'Group B', value: 300 },
+        { name: 'Group C', value: 200 },
+        { name: 'Group D', value: 100 },
+    ];
+    const COLORS = ['#5700FB', '#E6D543', '#50E85D', '#EA356B'];
     return (
         <div style={{
             width: 1440,
@@ -176,23 +187,338 @@ const Home = (props: any) => {
                                 style={{
                                     width: "445px",
                                     height: "412px",
-                                    background: "#FFFFFF 0% 0% no-repeat padding-box",
+                                    display: "flex",
+                                    flexDirection: "column",
                                     boxShadow: "0px 2px 3px #0000000D",
                                     borderRadius: "8px",
-                                    opacity: "1"
+                                    opacity: "1",
+                                    gap: "15px"
                                 }}
                             >
-                                {"asd"}
+                                <div 
+                                    id='stadistics-graph-container'
+                                    style={{
+                                        width: "445px",
+                                        height: "259px",
+                                        background: "#FFFFFF 0% 0% no-repeat padding-box",
+                                        boxShadow: "0px 2px 3px #0000000D",
+                                        borderRadius: "8px",
+                                        opacity: "1"
+                                    }}
+                                >
+                                    <div 
+                                        id="stadistics-graph-head-box"
+                                        style={{
+                                            display: "flex",
+                                            flexDirection: "column",
+                                            gap: "0",
+                                            alignItems: "center"
+                                        }}
+                                    >
+                                        <p style={{
+                                            height: "0px",
+                                            width: "400px",
+                                            textAlign: "left",
+                                            font: "normal normal normal 12px/18px Poppins",
+                                            letterSpacing: "0.5px",
+                                            color: "#00065A",
+                                            opacity: "1",
+                                            fontSize: 'medium'
+                                        }}>Graph</p>
+                                        <div 
+                                            id='stadistics-graph-navbar-box'
+                                            style={{
+                                                display: "flex",
+                                                flexDirection: "row",
+                                                gap: "53px",
+                                                height: "38px",
+                                                borderBottom: "2px solid rgb(0,0,0,0.1)"
+                                            }}
+                                        >
+                                            <nav 
+                                                id='stadistics-graph-navbar'
+                                                style={{
+                                                    display: "flex",
+                                                    flexDirection: "row",
+                                                    gap: "18px"
+                                                }}
+                                            >
+                                                <p style={{
+                                                    textAlign: "left",
+                                                    font: "normal normal bold 12px/18px Poppins",
+                                                    letterSpacing: "0.5px",
+                                                    color: "#00065A",
+                                                    opacity: "1",
+                                                    fontSize: 'medium'
+                                                }}>Encounters</p>
+                                                <p style={{
+                                                    textAlign: "left",
+                                                    font: "normal normal normal 12px/18px Poppins",
+                                                    letterSpacing: "0px",
+                                                    color: "#B4B4B4",
+                                                    opacity: "1",
+                                                    fontSize: 'medium'
+                                                }}>Overview</p>
+                                            </nav>
+                                            <div 
+                                                id='stadistics-graph-period'
+                                                style={{
+                                                    display: 'flex',
+                                                    flexDirection: 'row',
+                                                    gap: '6px'
+                                                }}
+                                            >
+                                                <p style={{
+                                                    textAlign: "left",
+                                                    font: "normal normal normal 12px/18px Poppins",
+                                                    letterSpacing: "0px",
+                                                    color: "#B4B4B4",
+                                                    opacity: "1",
+                                                    fontSize: 'medium'
+                                                }}>Show Period:</p>
+                                                <p style={{
+                                                    textAlign: "left",
+                                                    font: "normal normal normal 12px/18px Poppins",
+                                                    letterSpacing: "0.5px",
+                                                    color: "#00065A",
+                                                    opacity: "1",
+                                                    textDecorationLine: 'underline',
+                                                    fontSize: 'medium'
+                                                }}>Last 2 weeks</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div 
+                                        id='stadistics-graph-body-box'
+                                        style={{
+                                            width: "440px",
+                                            height: "185px",
+                                            display: "flex",
+                                            flexDirection: "column",
+                                            alignItems: "flex-start",
+                                            position: "relative",
+                                            left: "24px",
+                                            top: "-12px"
+                                        }}
+                                    >
+                                        <p style={{
+                                            textAlign: "left",
+                                            font: "normal normal normal 12px/18px Poppins",
+                                            letterSpacing: "0px",
+                                            color: "#B4B4B4",
+                                            opacity: "1",
+                                            fontSize: 'medium'
+                                        }}>Total Encounters</p>
+                                        <p style={{
+                                            width: "195px",
+                                            height: "33px",
+                                            marginTop: "0px",
+                                            color: "#00065A",
+                                            textAlign: "left",
+                                            font: "bold 24px / 20px Poppins",
+                                            letterSpacing: "0.48px",
+                                            opacity: "1",
+                                            fontSize: "large"
+                                        }}>625 ENCOUNTERS</p>
+                                        <CustomBarChart/>
+                                    </div>
+                                </div>
+                                <div 
+                                    id="commons-containers"
+                                    style={{
+                                        height: "136px",
+                                        display: "flex",
+                                        flexDirection: "row",
+                                        alignItems: "center",
+                                        gap: "15px"
+                                    }}
+                                >
+                                    <div 
+                                        id="common-consults-box"
+                                        style={{
+                                            width: "215px",
+                                            height: "100%",
+                                            display: "flex",
+                                            flexDirection: "column",
+                                            justifyContent: "center",
+                                            background: "#FFFFFF 0% 0% no-repeat padding-box",
+                                            boxShadow: "0px 2px 3px #0000000D",
+                                            borderRadius: "8px",
+                                            opacity: "1",
+                                            alignContent: "center",
+                                            alignItems: "center",
+                                            gap: "7px"
+                                        }}
+                                    >
+                                        <p style={{
+                                            textAlign: "left",
+                                            font: "normal normal bold 12px/12px Poppins",
+                                            letterSpacing: "0px",
+                                            color: "#00065A",
+                                            opacity: "1",
+                                            overflowWrap: "break-word",
+                                            width: "150px",
+                                            height: "0px"
+                                        }}>
+                                            COMMON MEDICAL CONSULTS
+                                        </p>
+                                        <ol 
+                                            type='1'
+                                            style={{
+                                                width: '81px',
+                                                padding: "0px",
+                                                position: "relative",
+                                                font: "normal normal normal 12px/16px Poppins",
+                                                fontSize: "smaller",
+                                                letterSpacing: "0px",
+                                                color: "#000000",
+                                                opacity: 1,
+                                                left: "-23px"
+                                            }}
+                                        >
+                                            <li>TRAUMA</li>
+                                            <li>CARDIOLOGY</li>
+                                            <li>DERMATOLOGY</li>
+                                            <li>ONCOLOGY</li>
+                                        </ol>
+                                    </div>
+                                    <div 
+                                        id="common-emergencies-box"
+                                        style={{
+                                            width: "215px",
+                                            height: "100%",
+                                            display: "flex",
+                                            flexDirection: "column",
+                                            justifyContent: "center",
+                                            background: "#FFFFFF 0% 0% no-repeat padding-box",
+                                            boxShadow: "0px 2px 3px #0000000D",
+                                            borderRadius: "8px",
+                                            opacity: "1",
+                                            alignContent: "center",
+                                            alignItems: "center",
+                                            gap: "7px"
+                                        }}
+                                    >
+                                        <p style={{
+                                            textAlign: "left",
+                                            font: "normal normal bold 12px/12px Poppins",
+                                            letterSpacing: "0px",
+                                            color: "#00065A",
+                                            opacity: "1",
+                                            overflowWrap: "break-word",
+                                            width: "150px",
+                                            height: "0px"
+                                        }}>
+                                            COMMON EMERGENCIES
+                                        </p>
+                                        <ol 
+                                            type='1'
+                                            style={{
+                                                width: "81",
+                                                padding: "0px",
+                                                position: "relative",
+                                                font: "normal normal normal 12px/16px Poppins",
+                                                fontSize: "smaller",
+                                                letterSpacing: "0px",
+                                                color: "#000000",
+                                                opacity: 1,
+                                                left: "-23px"
+                                            }}
+                                        >
+                                            <li>CARDIAC</li>
+                                            <li>SKIN LESION</li>
+                                            <li>ALLERGY</li>
+                                            <li>COVID</li>
+                                        </ol>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div 
                             id="piechart-data-container"
                             style={{
+                                display: "flex",
+                                justifyContent: 'center',
+                                alignItems: 'center',
                                 width: "800px",
                                 height: "160px",
-                                background: "#FFFFFF 0% 0% no-repeat padding-box",
                             }}
                         >
+                            <CustomPieChart CenterTitle={
+                                {
+                                    content: '38',
+                                    x: 18,
+                                    y: 3
+                                }
+                            } CenterText={[
+                                {
+                                    content: 'Patient in',
+                                    x: 27,
+                                    y: 15
+                                },
+                                {
+                                    content: 'Progress',
+                                    x: 25,
+                                    y: 25,
+                                }
+                            ]}/>
+                            <CustomPieChart CenterTitle={
+                                {
+                                    content: '10',
+                                    x: 18,
+                                    y: 3
+                                }
+                            } CenterText={[
+                                {
+                                    content: 'Medical',
+                                    x: 24,
+                                    y: 15
+                                },
+                                {
+                                    content: 'Consultation',
+                                    x: 29,
+                                    y: 25,
+                                }
+                            ]}/>
+                            <CustomPieChart CenterTitle={
+                                {
+                                    content: '5',
+                                    x: 8,
+                                    y: 3
+                                }
+                            } CenterText={[
+                                {
+                                    content: 'Laboratory',
+                                    x: 27,
+                                    y: 15
+                                }
+                            ]}/>
+                            <CustomPieChart CenterTitle={
+                                {
+                                    content: '5',
+                                    x: 8,
+                                    y: 3
+                                }
+                            } CenterText={[
+                                {
+                                    content: 'Radiology',
+                                    x: 27,
+                                    y: 15
+                                }
+                            ]}/>
+                            <CustomPieChart CenterTitle={
+                                {
+                                    content: '18',
+                                    x: 18,
+                                    y: 3
+                                }
+                            } CenterText={[
+                                {
+                                    content: 'in treatment',
+                                    x: 27,
+                                    y: 15
+                                }
+                            ]}/>
                         </div>
                     </div>
                     <div 
