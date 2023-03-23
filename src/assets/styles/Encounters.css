@@ -1,0 +1,17 @@
+/* button,
+button:active,
+button:focus {
+    outline: none;
+} */
+
+#my-encounters-body-content-box {
+    overflow: hidden;
+}
+
+#my-encounters-body-content-box::-webkit-scrollbar {
+    display: none;
+}
+
+#my-encounters-body-content-box:hover {
+    overflow-y: scroll;
+}

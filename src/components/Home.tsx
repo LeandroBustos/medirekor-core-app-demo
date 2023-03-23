@@ -1,15 +1,13 @@
 import React from 'react';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import backgroundHome from '../assets/images/img_fondo_home_clinician.svg' 
 import logoMedirekor from '../assets/images/logo_medirekor_2.svg'
 import '../assets/styles/Home.css';
 import imgUser from '../assets/images/img_user_dr-rodriguez.png'
 import { TotalBox } from './TotalBox';
-import { Cell, Pie, PieChart, Label } from 'recharts';
-import CustomLabel from './CustomLabel';
 import CustomPieChart from './CustomPieChart';
 import CustomBarChart from './CustomBarChart';
+import PatientProgress from './PatientProgress';
 
 const Home = (props: any) => {
     const data = [
@@ -120,6 +118,7 @@ const Home = (props: any) => {
                             width: "30px",
                             height: "30px",
                             background: `transparent url(${imgUser}) 0% 0% no-repeat padding-box`,
+                            borderRadius: "50%",
                             opacity: "1"
                         }}/>
                         <p style={{
@@ -129,7 +128,7 @@ const Home = (props: any) => {
                             textAlign: "left",
                             letterSpacing: "0.5px",
                             fontSize: "smaller",
-                            opacity: "1"
+                            opacity: "0.6"
                         }}>Dr. Rodriguez Nieto</p>
                     </div>
                 </div>
@@ -532,6 +531,56 @@ const Home = (props: any) => {
                             opacity: "1"
                         }}
                     >
+                        <div 
+                            id="patient-in-progress-head-box"
+                            style={{
+                                height: "42px",
+                                display: 'flex',
+                                background: "#00065A 0% 0% no-repeat padding-box",
+                                borderRadius: "8px 8px 0px 0px",
+                                opacity: "1"
+                            }}
+                        >
+                            <p style={{
+                                paddingLeft: "28px",
+                                textAlign: "left",
+                                font: "normal normal bold 14px/17px Poppins",
+                                letterSpacing: "0px",
+                                color: "#FFFFFF",
+                                opacity: "1",
+                            }}>Patient in Progress</p>
+                        </div>
+                        <div 
+                            id="patient-in-progress-body-box"
+                            style={{
+                                height: "537px",
+                                display: "flex",
+                                flexDirection: "column",
+                                gap: "18px",
+                                alignItems: "center"
+                            }}
+                        >
+                            <div 
+                                id="patients-scrollable-box"
+                                style={{
+                                    width: "90%",
+                                    height: "100%",
+                                    display: "flex",
+                                    gap: "31px",
+                                    overflowY: "scroll",
+                                    paddingTop: "18px",
+                                    flexDirection: "column",
+                                    alignItems: "center"
+                                }}
+                            >
+                                <PatientProgress 
+                                    patientName='Carlos Enriquez Lopez' 
+                                    admisionDate='31/10/2022 20:23'
+                                    medicalConsult='TRAUMA'
+                                    patientConsultStatus='MAX_WAITING'
+                                />
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -539,11 +588,23 @@ const Home = (props: any) => {
             <div style={{
                 width: '1440px',
                 height: '56px',
+                display: "flex",
+                flexDirection: "row-reverse",
+                alignItems: "flex-end",
+                justifyContent: "flex-start",
                 background: "#00065A 0% 0% no-repeat padding-box",
                 boxShadow: "0px 5px 20px #0000000A",
                 opacity: "1"
             }}>
-                //BOTTOM
+                <p style={{
+                    width: "169px",
+                    height: "17px",
+                    textAlign: "left",
+                    font: "normal normal 300 12px/17px Poppins",
+                    letterSpacing: "0.34px",
+                    color: "#FFFFFF",
+                    opacity: "0.6"
+                }}>MedSight © Copyright 2022</p>
             </div>
         </div>
     );
