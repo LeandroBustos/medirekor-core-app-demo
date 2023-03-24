@@ -1,14 +1,14 @@
 import React from "react"
 
 //TODO MODULARIZAR EN UN SOLO COMPONENTE
-export const CustomPoppinsBold: React.FC<{content: string}> = props => {
-    const {content} = props
+export const CustomPoppinsBold: React.FC<{content: string, size?: string}> = props => {
+    const {content, size} = props
     return (
         <p style={{
             marginTop: "0px",
             height: "0px",
             textAlign: "left",
-            font: "normal normal 600 12px/14px Poppins",
+            font: `normal normal 600 ${size || "12px/14px"} Poppins`,
             letterSpacing: "0px",
             color: "#00065A",
             opacity: "1"

@@ -10,7 +10,7 @@ import imgPatientDefaultDischarged from '../assets/images/img_patient_encounters
 import imgPatientDefaultInternship from '../assets/images/img_patient_encounters_default_internship.png'
 import '../assets/styles/Encounters.css'
 import { lorem } from '../constants/strings';
-import PatientEncounterContainer from './PatientEncounterContainer';
+import {PatientEncounterContainer} from './PatientData';
 const Encounters = (props: any) => {
     return (
         <div style={{
@@ -168,7 +168,7 @@ const Encounters = (props: any) => {
                             Patient Encounters
                         </p>
                         <div
-                            id="encounters-filters-box"
+                            id="encounters-navbar-box"
                             style={{
                                 width: "278px",
                                 height: "33px",
@@ -237,6 +237,7 @@ const Encounters = (props: any) => {
                     >
                         <PatientEncounterContainer
                             index={0}
+                            path="encounters"
                             patientImg={imgPatient_1}
                             patientData={{
                                 fullname: "Carlos Enrique Lopez",
@@ -248,6 +249,7 @@ const Encounters = (props: any) => {
                         />
                         <PatientEncounterContainer
                             index={1}
+                            path="encounters"
                             patientImg={imgPatient_2}
                             patientData={{
                                 fullname: "Rogelio Benitez",
@@ -259,6 +261,7 @@ const Encounters = (props: any) => {
                         />
                         <PatientEncounterContainer
                             index={2}
+                            path="encounters"
                             patientImg={imgPatientDefaultMinWaiting}
                             patientData={{
                                 fullname: "Adolfo Rodriguez",
@@ -270,6 +273,7 @@ const Encounters = (props: any) => {
                         />
                         <PatientEncounterContainer
                             index={3}
+                            path="encounters"
                             patientImg={imgPatientDefaultDischarged}
                             patientData={{
                                 fullname: "Carlos Enrique Lopez",
@@ -281,6 +285,7 @@ const Encounters = (props: any) => {
                         />
                         <PatientEncounterContainer
                             index={4}
+                            path="encounters"
                             patientImg={imgPatientDefaultInternship}
                             patientData={{
                                 fullname: "Carlos Enrique Lopez",
