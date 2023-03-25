@@ -6,11 +6,13 @@ import backArrow from '../assets/images/back_arrow.svg'
 import imgUser from '../assets/images/img_user_dr-rodriguez.png'
 import imgPatient_1 from '../assets/images/img_patient_encounters.png'
 import '../assets/styles/Encounters.css'
-import { CustomPoppinsBold, CustomPoppinsNormalLong } from './CustomParagraph';
+import { CustomPoppinsBold, CustomPoppinsNormal, CustomPoppinsNormalLong } from './CustomParagraph';
 import CustomButton from './CustomButton';
 import { PatientDataBox } from './PatientData';
 import { lorem2 } from '../constants/strings';
 import VitalSign from './VitalSign';
+import Etiquete from './Etiquete';
+import PatientMedicalEtiquetes from './PatientMedicalEtiquetes';
 const PatientChart = (props: any) => {
     return (
         <div style={{
@@ -171,12 +173,12 @@ const PatientChart = (props: any) => {
                                 src={backArrow}
                                 style={{
                                     width: "34px",
-                                    height: "30px",
+                                    height: "15px",
                                     display: "flex",
                                     flexDirection: "column",
                                     background: `0% 0% no-repeat padding-box`,
                                     filter: "invert(7%) sepia(27%) saturate(7506%) hue-rotate(239deg) brightness(97%) contrast(139%)",
-                                    transform: "scale(0.7)"
+                                    transform: "scale(1.7)"
                                 }}
                             />
                             <CustomPoppinsBold 
@@ -394,21 +396,259 @@ const PatientChart = (props: any) => {
                             </div>
                         </div>
                         <div
-                            id="patient-medical-history-box"
+                            id="patient-chart-medical-history-container"
                             style={{
                                 width: "816px",
                                 height: "100%",
                                 display: "flex",
-                                flexDirection: "column",
-                                justifyContent: "space-evenly",
-                                alignItems: "flex-start",
+                                flexDirection: "row",
+                                justifyContent: "center",
+                                alignItems: "center",
                                 background: "#FFFFFF 0% 0% no-repeat padding-box",
                                 boxShadow: "0px 2px 3px #0000000D",
                                 borderRadius: "8px",
                                 opacity: "1",
+                                gap: "24px"
                             }}
                         >
-                            
+                            <div
+                                id='patient-chart-medical-history-medic-data-box'
+                                style={{
+                                    width: "304px",
+                                    height: "540px",
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    justifyContent: "flex-start",
+                                    alignItems: "center",
+                                    gap: "30px"
+                                }}
+                            >
+                                <PatientMedicalEtiquetes
+                                    id="allergies"
+                                    color="#E5BF42"
+                                    title="Allergies"
+                                    content={["Rynatan", "Aspirin"]}
+                                    width="100px"
+                                    height="17px"
+                                />
+                                <PatientMedicalEtiquetes
+                                    id="vaccines"
+                                    color="#42CFE5"
+                                    title="Vaccines"
+                                    content={["Tetanus", "HPV", "Hep A", "Hep B", "Polio", "Hib", "COVID19"]}
+                                    width="90px"
+                                    height="17px"
+                                />
+                                <PatientMedicalEtiquetes
+                                    id="active-medication"
+                                    color="#DC43CD "
+                                    title="Active Medication"
+                                    content={["Symbicort", "Albuterol"]}
+                                    width="109px"
+                                    height="17px"
+                                />
+                                <PatientMedicalEtiquetes
+                                    id="chronic-diseases"
+                                    color="#EA356B  "
+                                    title="Chronic Diseases"
+                                    content={["Asthma"]}
+                                    width="109px"
+                                    height="17px"
+                                />
+                            </div>
+                            <span
+                                style={{
+                                    border: "1px solid #EFEEEE",
+                                    height: "100%"
+                                }}
+                            />
+                            <div
+                                id='patient-chart-medical-history-extra-data-container'
+                                style={{
+                                    width: "380px",
+                                    height: "100%",
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    justifyContent: "center",
+                                    alignItems: "center",
+                                    gap: "79px"
+                                }}
+                            >
+                                <div
+                                    id="patient-surgeries-box"
+                                    style={{
+                                        width:"348px",
+                                        display: "flex",
+                                        flexDirection: "column",
+                                        gap: "13px"
+                                    }}
+                                >
+                                    <CustomPoppinsBold
+                                        content="Past Surgeries"
+                                        size="18px/21px"
+                                        height="45px"
+                                        borderBottom="2px solid #EFEEEE"
+                                        marginBottom="0px"
+                                    />
+                                    <div
+                                        id="patient-surgery-0"
+                                        style={{
+                                            height: "45px",
+                                            display: "flex",
+                                            flexDirection: "row",
+                                            justifyContent: "space-between",
+                                            alignItems: "center",
+                                            gap: "177px",
+                                            borderBottom: "2px solid #EFEEEE",
+
+                                        }}
+                                    >
+                                        <CustomPoppinsNormal
+                                            content="Left Hand Surgery"
+                                        />
+                                        <CustomPoppinsNormal
+                                            content="10/25/1998"
+                                        />
+                                    </div>
+                                    <div
+                                        id="patient-surgery-1"
+                                        style={{
+                                            height: "45px",
+                                            display: "flex",
+                                            flexDirection: "row",
+                                            justifyContent: "space-between",
+                                            alignItems: "center",
+                                            gap: "177px",
+                                            borderBottom: "2px solid #EFEEEE",
+
+                                        }}
+                                    >
+                                        <CustomPoppinsNormal
+                                            content="Left Hand Surgery"
+                                        />
+                                        <CustomPoppinsNormal
+                                            content="10/25/1998"
+                                        />
+                                    </div>
+                                    <div
+                                        id="patient-surgery-2"
+                                        style={{
+                                            height: "45px",
+                                            display: "flex",
+                                            flexDirection: "row",
+                                            justifyContent: "space-between",
+                                            alignItems: "center",
+                                            gap: "177px",
+                                            borderBottom: "2px solid #EFEEEE",
+
+                                        }}
+                                    >
+                                        <CustomPoppinsNormal
+                                            content="Left Hand Surgery"
+                                        />
+                                        <CustomPoppinsNormal
+                                            content="10/25/1998"
+                                        />
+                                    </div>
+                                </div>
+                                <div
+                                    id="patient-insurance-box"
+                                    style={{
+                                        width:"348px",
+                                        height: "223px",
+                                        display: "flex",
+                                        flexDirection: "column",
+                                        gap: "13px"
+                                    }}
+                                >
+                                    <CustomPoppinsBold
+                                        content="Insurance"
+                                        size="18px/21px"
+                                        height="45px"
+                                        borderBottom="2px solid #EFEEEE"
+                                        marginBottom="0px"
+                                    />
+                                    <div
+                                        id="patient-insurance-data-0"
+                                        style={{
+                                            height: "45px",
+                                            display: "flex",
+                                            flexDirection: "row",
+                                            justifyContent: "space-between",
+                                            alignItems: "center",
+                                            gap: "177px",
+                                            borderBottom: "2px solid #EFEEEE",
+
+                                        }}
+                                    >
+                                        <CustomPoppinsNormal
+                                            content="Insurance Provider"
+                                        />
+                                        <CustomPoppinsNormal
+                                            content="SSS"
+                                        />
+                                    </div>
+                                    <div
+                                        id="patient-insurance-data-1"
+                                        style={{
+                                            height: "45px",
+                                            display: "flex",
+                                            flexDirection: "row",
+                                            justifyContent: "space-between",
+                                            alignItems: "center",
+                                            gap: "177px",
+                                            borderBottom: "2px solid #EFEEEE",
+                                        }}
+                                    >
+                                        <CustomPoppinsNormal
+                                            content="Group ID"
+                                        />
+                                        <CustomPoppinsNormal
+                                            content="1234567"
+                                        />
+                                    </div>
+                                    <div
+                                        id="patient-insurance-data-2"
+                                        style={{
+                                            height: "45px",
+                                            display: "flex",
+                                            flexDirection: "row",
+                                            justifyContent: "space-between",
+                                            alignItems: "center",
+                                            gap: "177px",
+                                            borderBottom: "2px solid #EFEEEE",
+
+                                        }}
+                                    >
+                                        <CustomPoppinsNormal
+                                            content="Member ID"
+                                        />
+                                        <CustomPoppinsNormal
+                                            content="0311254"
+                                        />
+                                    </div>
+                                    <div
+                                        id="patient-insurance-data-3"
+                                        style={{
+                                            height: "45px",
+                                            display: "flex",
+                                            flexDirection: "row",
+                                            justifyContent: "space-between",
+                                            alignItems: "center",
+                                            gap: "177px",
+                                            borderBottom: "2px solid #EFEEEE",
+
+                                        }}
+                                    >
+                                        <CustomPoppinsNormal
+                                            content="PCP"
+                                        />
+                                        <CustomPoppinsNormal
+                                            content="N/A"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
