@@ -12,7 +12,7 @@ import { UserContext } from '../contexts/UserContext';
 import { Outlet, Route, Routes } from 'react-router-dom';
 import Dashboard from './Dashboard';
 import Encounters from './Encounters';
-import PatientChart from './PatientChart';
+import PatientChart from './Patient';
 import { Link } from 'react-router-dom';
 
 const Home = (props: any) => {

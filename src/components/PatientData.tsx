@@ -9,6 +9,7 @@ export const PatientEncounterContainer: React.FC<{
     path: string
     patientImg: string,
     patientData: {
+        id: string,
         fullname: string,
         birthdate: string, 
         os: string,
@@ -49,7 +50,7 @@ export const PatientEncounterContainer: React.FC<{
             >
                 <CustomPoppinsNormalLong content={patientData.extra} width="600px"/>
                 <Link
-                    to={`/home/encounters/${index+1}`}
+                    to={`/home/encounters/patient/${patientData.id}/chart`}
                 >
                     <img src={visibleIconSvg} style={{
                         width: "22px",

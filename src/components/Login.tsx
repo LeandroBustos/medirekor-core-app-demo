@@ -105,7 +105,7 @@ const Login: React.FC<{setUserData: Function}> = (props: any) => {
                     }}
                     >
                         <input type="text" onChange={(e) => setUser(e.target.value)} style={{"paddingLeft":"30px","width":"100%","border":"1px solid black","borderRadius":"5px"}} placeholder="User"/>
-                        <i style={{"position":"absolute","top":"50%","left":"5px","transform":"translateY(-50%)","color":"grey"}} className="material-icons">person</i>
+                        {/* <i style={{"position":"absolute","top":"50%","left":"5px","transform":"translateY(-50%)","color":"grey"}} className="material-icons">person</i> */}
                     </div>
                     <div style={{
                         display: "flex",
@@ -117,7 +117,7 @@ const Login: React.FC<{setUserData: Function}> = (props: any) => {
                     }}
                     >
                         <input type="password" onChange={(e) => setPassword(e.target.value)} style={{"paddingLeft":"30px","width":"100%","border":"1px solid black","borderRadius":"5px"}} placeholder="Password"/>
-                        <i style={{"position":"absolute","top":"50%","left":"5px","transform":"translateY(-50%)","color":"grey"}} className="material-icons">lock</i>
+                        {/* <i style={{"position":"absolute","top":"50%","left":"5px","transform":"translateY(-50%)","color":"grey"}} className="material-icons">lock</i> */}
                     </div>
                     <div style={{
                         "display":"flex","alignItems":"center"

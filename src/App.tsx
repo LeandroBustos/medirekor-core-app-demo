@@ -8,6 +8,8 @@ import Encounters from './components/Encounters';
 import PatientChart from './components/PatientChart';
 import { UserContext } from './contexts/UserContext';
 import Dashboard from './components/Dashboard';
+import WorkingOn from './components/WorkingOn';
+import Patient from './components/Patient';
 
 function App() {
   const [userData, setUserData] = useState(null)
@@ -33,7 +35,16 @@ function App() {
             >
               <Route index element={<Dashboard/>}/>
               <Route path='encounters' element={<Encounters/>}/>
-              <Route path='encounters/:id' element={<PatientChart/>}/>
+              <Route path='encounters/patient/:id' element={<Patient/>}>
+                <Route index path='chart' element={<PatientChart/>}/>
+                <Route path='encounters' element={<WorkingOn/>}/>
+                <Route path='laboratory' element={<WorkingOn/>}/>
+                <Route path='radiology' element={<WorkingOn/>}/>
+                <Route path='diagnoses' element={<WorkingOn/>}/>
+                <Route path='referrals' element={<WorkingOn/>}/>
+                <Route path='chronic-diseases' element={<WorkingOn/>}/>
+                <Route path='prescriptions' element={<WorkingOn/>}/>
+              </Route>
             </Route>
             <Route path='/login' element={
               JSON.parse(sessionStorage.getItem('userData') as string) ?

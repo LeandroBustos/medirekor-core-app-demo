@@ -1,16 +1,17 @@
 import React from "react"
 
-const CustomButton: React.FC<{content: string,  active: boolean, width?:string, height?:string}> = props => {
-    const {content, active, width, height} = props
+const CustomButton: React.FC<{className: string, content: string,  active: boolean, onClick: any, width?:string, height?:string}> = props => {
+    const {className, content, active, onClick, width, height} = props
     return (
         <button
+            className={`${className} ${active ? "enable" : "disable"}`}
+            onClick={onClick}
             style={{
                 width: width || "134px",
                 height: height || "34px",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                background: `${active ? "#5700FB" : "#8086DC"}  0% 0% no-repeat padding-box`,
                 borderRadius: "6px",
                 borderWidth: "0px",
                 outline: "none",

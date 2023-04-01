@@ -137,6 +137,7 @@ const Encounters = (props: any) => {
                         path="encounters"
                         patientImg={patientImages.DISCHARGED}
                         patientData={{
+                            id: encounter.id,
                             fullname: `${encounter.name} ${encounter.last_name}`,
                             birthdate: `${encounter.birthday}`,
                             os: `${encounter.os}`,
