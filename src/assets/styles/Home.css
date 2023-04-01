@@ -1,0 +1,20 @@
+#home-search-patient::placeholder {
+    color: #fafafa;
+}
+
+ol > li::marker {
+    font-weight: bold;
+}
+
+#barchart {
+    left: -57px;
+    position: relative;
+    width: 111%;
+    height: 100%;
+    top: -14px;
+}
+
+a:-webkit-any-link {
+    text-decoration: none;
+    color: inherit;
+}

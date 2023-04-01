@@ -1,0 +1,29 @@
+#my-encounters-body-content-box {
+    overflow: hidden;
+}
+
+#my-encounters-body-content-box::-webkit-scrollbar {
+    display: none;
+}
+
+#my-encounters-body-content-box:hover {
+    overflow-y: scroll;
+}
+
+button.patient-nav-button.enable {
+    background: #5700FB 0% 0% no-repeat padding-box;
+    border-radius: 6px;
+    border-width: 0px;
+    outline: none;
+}
+
+button.patient-nav-button.disable {
+    background: #8086DC 0% 0% no-repeat padding-box;
+    border-radius: 6px;
+    border-width: 0px;
+    outline: none;
+}
+
+button.patient-nav-button.disable:hover {
+    background: #5700FB 0% 0% no-repeat padding-box;;
+}
