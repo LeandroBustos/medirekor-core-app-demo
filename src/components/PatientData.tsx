@@ -2,6 +2,7 @@ import React from "react"
 import ConsulStatusEtiquete from "./ConsultStatusEtiquete"
 import { CustomPoppinsBold, CustomPoppinsNormal, CustomPoppinsNormalLong } from "./CustomParagraph"
 import visibleIconSvg from '../assets/images/visible.svg'
+import { Link } from "react-router-dom"
 
 export const PatientEncounterContainer: React.FC<{
     index: number,
@@ -47,12 +48,16 @@ export const PatientEncounterContainer: React.FC<{
                 }}
             >
                 <CustomPoppinsNormalLong content={patientData.extra} width="600px"/>
-                <img src={visibleIconSvg} style={{
-                    width: "22px",
-                    height: "15px",
-                    background: `0% 0% no-repeat padding-box`,
-                    opacity: "1"
-                }}/>
+                <Link
+                    to={`/home/encounters/${index+1}`}
+                >
+                    <img src={visibleIconSvg} style={{
+                        width: "22px",
+                        height: "15px",
+                        background: `0% 0% no-repeat padding-box`,
+                        opacity: "1"
+                    }}/>
+                </Link>
             </div>
         </div>
     )

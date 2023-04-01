@@ -1,10 +1,19 @@
 import React from 'react';
 import traumaLogo from '../assets/images/ic_trauma.png'
+import cardiologyLogo from '../assets/images/ic_cardiology.png'
+import inTreatmentLogo from '../assets/images/ic_in-treatment.png'
+import medicalConsultationLogo from '../assets/images/ic_medical_consultation.png'
+import vaccineLogo from '../assets/images/ic_vacuna.png'
+
 import ConsulStatusEtiquete from './ConsultStatusEtiquete';
 import { CustomPoppinsBold, CustomPoppinsNormal } from './CustomParagraph';
 
 const CONSULT_LOGO: Record<string, string> = {
-    'TRAUMA': traumaLogo
+    'TRAUMA': traumaLogo,
+    'CARDIOLOGY': cardiologyLogo,
+    'IN_TREATMENT': inTreatmentLogo,
+    'MEDICAL_CONSULTATION': medicalConsultationLogo,
+    'VACCINE': vaccineLogo
 }
 
 const PatientProgress: React.FC<{patientName: string, admisionDate: string, medicalConsult: string, patientConsultStatus: string}> = props =>{
@@ -17,10 +26,12 @@ const PatientProgress: React.FC<{patientName: string, admisionDate: string, medi
             alignItems: "center",
             gap: "15px"
         }}>
-            <img style={{
+            <img 
+            src={consultLogo}
+            style={{
                 width: "18px",
                 height: "18px",
-                background: `transparent url(${consultLogo}) 0% 0% no-repeat padding-box`,
+                background: `transparent 0% 0% no-repeat padding-box`,
                 opacity: "1"
             }}/>
             <div style={{

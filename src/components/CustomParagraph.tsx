@@ -6,7 +6,7 @@ export const CustomPoppinsBold: React.FC<{content: string, size?: string, height
     return (
         <p style={{
             marginTop: "0px",
-            marginBottom: marginBottom || "auto",
+            marginBottom: marginBottom || "revert",
             height: height || "0px",
             textAlign: "left",
             font: `normal normal 600 ${size || "12px/14px"} Poppins`,

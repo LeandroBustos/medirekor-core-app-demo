@@ -14,11 +14,11 @@ const WAITED_TIME_STATUS: Record<string, object> = {
         label: "+ 1 hours"
     },
     "DISCHARGED": {
-        color: "B4B4B4",
+        color: "#B4B4B4",
         label: "Discharged"
     },
     "INTERNSHIP": {
-        color: "#A642C3",
+        color: "#5700FB",
         label: "Internship"
     },
 }
