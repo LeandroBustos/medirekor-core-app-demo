@@ -1,5 +1,5 @@
-# medirekor-core-api-demo
-A demo of medirekor's core api, with backend and database with an user ready to use deployment
+# medirekor-core-app-demo
+A demo of medirekor's core app, with a frontend ready to be deployed
 ## Environment Variables
 **NONE**
 
